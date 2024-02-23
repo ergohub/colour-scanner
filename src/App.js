@@ -66,9 +66,9 @@ constructor() {
   }
 }
 
-setColourSelection = (colours) => {
-  this.setState({colours:colours})
-  console.log(colours);
+setColourSelection = (selection) => {
+  this.setState({colours:selection})
+  // console.log(colours);
 }
 
 onButtonSubmit=()=> {
@@ -106,7 +106,7 @@ onInputChange = (event) => {
         <Header />
         <Imageholder 
           imageUrl={ this.state.imageUrl } 
-          colours={ this.selection }
+          colours={ this.state.colours }
           />
         <Imagefield 
           onInputChange={ this.onInputChange } 
