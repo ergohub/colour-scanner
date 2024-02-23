@@ -14,7 +14,7 @@ const Imageholder = ({imageUrl, colours}) => {
             </Row>
             <Row>
                 {colours.map((colour, id) => (
-                    <Col key={id} style={colour.id}>&nbsp;</Col>
+                    <Col key={id}>{colour[id]}</Col>
                 ))}
             </Row>
         </Container>
