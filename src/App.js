@@ -21,7 +21,7 @@ const APP_ID = 'colour-scan';
 // Change these to whatever model and image URL you want to use
 // const MODEL_ID = 'color-recognition';
 // const MODEL_VERSION_ID = 'dd9458324b4b45c2be1a7ba84d27cd04';    
-const IMAGE_URL = 'https://samples.clarifai.com/metro-north.jpg';
+const IMAGE_URL = imageUrl;
 
 ///////////////////////////////////////////////////////////////////////////////////
 // YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE TO RUN THIS EXAMPLE
@@ -81,23 +81,25 @@ onButtonSubmit=()=> {
   .then(response => response.json())
   .then(response => {
     const colours = response.outputs[0].data.colors
-
+    
     const selection = [];
-
+    
     colours.forEach((colour) => {
-        const colourPick = colour.w3c.hex
-        selection.push(colourPick)
-      });
-      this.setColourSelection(selection)
-      // this.setState({colours:selection});
-      // console.log(selection);
-    })
-    // .then(result => console.log(result))
+      const colourPick = colour.w3c.hex
+      
+      selection.push(colourPick)
+    });
+    this.setColourSelection(selection)
+    // this.setState({colours:selection});
+    // console.log(selection);
+  })
+  // .then(result => console.log(result))
     .catch(error => console.log('error', error));
 }
 
 onInputChange = (event) => {
   this.setState({imageUrl:event.target.value})
+  this.setState.colours = []
 }
 
   render() {
