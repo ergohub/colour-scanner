@@ -14,7 +14,7 @@ const Imageholder = ({imageUrl, colours}) => {
             </Row>
             <Row>
                 {colours.map((colour, id) => (
-                    <Col key={id}>{colour}</Col>
+                    <Col  className='text-center pt-3 pb-3' key={id} style={{background:colour}}>{colour}</Col>
                 ))}
             </Row>
         </Container>
