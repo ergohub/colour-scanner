@@ -6,15 +6,16 @@ import Col from 'react-bootstrap/Col';
 const Imageholder = ({imageUrl, colours}) => {
     return(
         <Container className='mb-3'>
+            {console.log(colours)}
             <Row>
                 <Col className='text-center'>
                     <img src={imageUrl} width='640' alt='' />
                 </Col>
             </Row>
             <Row>
-                {/* {colours.map((colour, id) => (
-                    <Col key={id} style={`background:${colour.id}`}>&nbsp;</Col>
-                ))} */}
+                {colours.map((colour, id) => (
+                    <Col key={id} style={colour.id}>&nbsp;</Col>
+                ))}
             </Row>
         </Container>
     )
